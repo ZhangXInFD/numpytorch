@@ -240,46 +240,46 @@ if __name__ == '__main__':
     # while models:
     #     model = models.pop()
     #     train(model=model, x=x, y=y, xvalid=xvalid, yvalid=yvalid)
-    # models = [nn.Sequential([nn.functional.Conv2d((3, 3), in_channels=1, out_channels=16, padding=1),
-    #                        nn.functional.Relu(),
-    #                        nn.functional.MaxPool2d((2, 2), 2),
-    #                        nn.functional.Conv2d((3, 3), in_channels=16, out_channels=32, padding=1),
-    #                        nn.functional.Relu(),
-    #                        nn.functional.MaxPool2d((2, 2), 2),
-    #                        nn.functional.Conv2d((3, 3), in_channels=32, out_channels=64, padding=1),
-    #                        nn.functional.Relu(),
-    #                        nn.functional.MaxPool2d((2, 2), 2),
-    #                        nn.functional.Flatten(),
-    #                        nn.functional.Linear(inputs_dim=256, outputs_dim=128),
-    #                        nn.functional.Relu(),
-    #                        nn.functional.Droupout(),
-    #                        nn.functional.Linear(inputs_dim=128, outputs_dim=10)]),
-    #          nn.Sequential([nn.functional.Conv2d((3, 3), in_channels=1, out_channels=16, padding=1),
-    #                         nn.functional.Relu(),
-    #                         nn.functional.MaxPool2d((2, 2), 2),
-    #                         nn.functional.Conv2d((3, 3), in_channels=16, out_channels=32, padding=1),
-    #                         nn.functional.Relu(),
-    #                         nn.functional.MaxPool2d((2, 2), 2),
-    #                         nn.functional.Conv2d((3, 3), in_channels=32, out_channels=64, padding=1),
-    #                         nn.functional.Relu(),
-    #                         nn.functional.MaxPool2d((2, 2), 2),
-    #                         nn.functional.Flatten(),
-    #                         nn.functional.Linear(inputs_dim=256, outputs_dim=128),
-    #                         nn.functional.Relu(),
-    #                         nn.functional.Droupout(),
-    #                         nn.functional.Linear(inputs_dim=128, outputs_dim=10)])
-    #          ]
-    model = nn.Sequential([ nn.functional.Flatten(),
+    models = [nn.Sequential([nn.functional.Conv2d((3, 3), in_channels=1, out_channels=16, padding=1),
+                           nn.functional.Relu(),
+                           nn.functional.MaxPool2d((2, 2), 2),
+                           nn.functional.Conv2d((3, 3), in_channels=16, out_channels=32, padding=1),
+                           nn.functional.Relu(),
+                           nn.functional.MaxPool2d((2, 2), 2),
+                           nn.functional.Conv2d((3, 3), in_channels=32, out_channels=64, padding=1),
+                           nn.functional.Relu(),
+                           nn.functional.MaxPool2d((2, 2), 2),
+                           nn.functional.Flatten(),
+                           nn.functional.Linear(inputs_dim=256, outputs_dim=128),
+                           nn.functional.Relu(),
+                           nn.functional.Droupout(),
+                           nn.functional.Linear(inputs_dim=128, outputs_dim=10)]),
+             nn.Sequential([nn.functional.Conv2d((3, 3), in_channels=1, out_channels=16, padding=1),
+                            nn.functional.Relu(),
+                            nn.functional.MaxPool2d((2, 2), 2),
+                            nn.functional.Conv2d((3, 3), in_channels=16, out_channels=32, padding=1),
+                            nn.functional.Relu(),
+                            nn.functional.MaxPool2d((2, 2), 2),
+                            nn.functional.Conv2d((3, 3), in_channels=32, out_channels=64, padding=1),
+                            nn.functional.Relu(),
+                            nn.functional.MaxPool2d((2, 2), 2),
+                            nn.functional.Flatten(),
                             nn.functional.Linear(inputs_dim=256, outputs_dim=128),
                             nn.functional.Relu(),
                             nn.functional.Droupout(),
-                            nn.functional.Linear(inputs_dim=128, outputs_dim=10),
-                            ])
+                            nn.functional.Linear(inputs_dim=128, outputs_dim=10)])
+             ]
+    # model = nn.Sequential([ nn.functional.Flatten(),
+    #                         nn.functional.Linear(inputs_dim=256, outputs_dim=128),
+    #                         nn.functional.Relu(),
+    #                         nn.functional.Droupout(),
+    #                         nn.functional.Linear(inputs_dim=128, outputs_dim=10),
+    #                         ])
     #model.load_state_dict(path='C:\\Users\ZhangXin\OneDrive\Deep learning\project\project1\project1\log\Fmodellr0.1epoch_num50\model.pkl')
-    # model = models.pop()
-    # #train(model=model, epoch_num=200, lr=1e-1, seed=123, train_batchsize=64, lr_decay=0.999, record=True)
-    # train(model=model, epoch_num=200, lr=1e-1, seed=123, train_batchsize=64, lr_decay=0.9996, record=True)
-    # model = models.pop()
-    # train(model=model, epoch_num=200, lr=1e-1, seed=123, train_batchsize=64, lr_decay=0.999, record=True)
-    train(model=model, epoch_num=200, lr=1e-1, seed=123, train_batchsize=64, lr_decay=1, record=False)
+    model = models.pop()
+    #train(model=model, epoch_num=200, lr=1e-1, seed=123, train_batchsize=64, lr_decay=0.999, record=True)
+    train(model=model, epoch_num=200, lr=1e-1, seed=123, train_batchsize=64, lr_decay=0.9996, record=True)
+    model = models.pop()
+    train(model=model, epoch_num=200, lr=1e-1, seed=123, train_batchsize=64, lr_decay=0.999, record=True)
+    # train(model=model, epoch_num=200, lr=1e-1, seed=123, train_batchsize=64, lr_decay=1, record=False)
 
